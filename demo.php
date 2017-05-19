@@ -1,0 +1,4 @@
+<?php
+include 'Pinyin.class.php';
+
+Pinyin_Pinyin::ChineseToPinyin('´«Ëµ', false, true, true);
