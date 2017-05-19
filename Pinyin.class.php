@@ -3,7 +3,7 @@
  * @desc 汉字转拼音 (utf8)
  */
 
-include 'dict.php';
+include 'Dict.class.php';
 
 class Pinyin_Pinyin
 {
