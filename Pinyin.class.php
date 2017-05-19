@@ -153,15 +153,21 @@ class Pinyin_Pinyin
                     $result = reset($arrFullPinyin);
                 }
             }
-
-            return $result;
         } else {
             $arrFirstPinyin = array_shift($arrPinyinList);
             $result = array();
             foreach ($arrFirstPinyin as $arrPinyin) {
                 $result[] = substr($arrPinyin, 0, 1);
             }
-            return $result;
         }
+        $arr = array_unique($result);
+        foreach ($arr as &$v) {
+            $v = strtolower($v);
+            $v = preg_replace("/[^a-z0-9]+/", '', $v);
+            unset($v);
+        }
+        unset($v);
+        $arr = array_unique($arr);
+        return implode(',', $arr);
     }
 }
